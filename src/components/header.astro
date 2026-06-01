@@ -1,0 +1,124 @@
+<header class="navbar">
+    <ul>
+        <li><a href="/" class="logo">Xavannah Baars</a></li>
+        <li><button><img src="images/menu-dropdown.svg"></button></li>
+    </ul>
+        <nav>
+            <ul>
+                <li><a href="/work">work</a></li>
+                <li><a href="/about">about</a></li>
+                <li><a href="/contact">contact</a></li>
+            </ul>
+        </nav>
+</header>
+<style>
+    /* Header styling */
+
+    header {
+        position: sticky;
+    }
+
+    header ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    header ul:nth-of-type(1) {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header nav {
+        position: fixed;
+        inset: 0;
+        background-color: var(--background-color);
+        z-index: 1;
+        translate: -100%;
+        transition: 0.5s;
+    }
+
+    header nav.open {
+        translate: 0;
+    }
+    
+    header img {
+        width: 30px;
+        height: 30px;
+    }
+
+    header button {
+        position: relative;
+        z-index: 2;
+        background-color: var(--background-color);
+        border: none;
+        padding: 0;
+    }
+
+    header nav ul {
+        padding: 0;
+    }
+
+    header li {
+        padding: 1em;
+        margin: 0;
+    }
+
+    header nav ul:nth-of-type(1) {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    header.navbar ul li a.logo {
+        font-family: Caveat, cursive;
+        font-size: 32px;
+        color: var(--accent-color);
+        line-height: 1;
+        margin-bottom: 6px;
+        text-transform: none;
+    }
+
+    header a { 
+        color: var(--text-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
+    header a:hover, header a:active, header a:focus {
+        color:  var(--text-color);
+    }
+
+    header a.active-state {
+        color: var(--text-color);
+    }
+
+    @media (width > 800px) {
+    header {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header nav {
+        position: relative;
+        background-color: none;
+        translate: 0;
+        transition: 0.5s;
+    }
+
+    header nav ul:nth-of-type(1) {
+        flex-direction: unset;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header button {
+        display: none;
+    }
+    }
+</style>
+   

@@ -1,0 +1,67 @@
+<footer>
+    <div>
+        <a href="/" class="logo">Xavannah Baars</a>
+        <p>Fontend Designer</p>
+    </div>
+
+    <div>
+        <h3>Contact info</h3>
+        <p><a href="mailto:xavannahbaars@icloud.com">xavannahbaars@icloud.com</a></p>
+        <p><a href="tel:+31612345678">+31 6 12345678</a></p>
+    </div>
+
+    <div>
+        <h3>Sitemap</h3>
+        <p><a href="/">Home</a></p>
+        <p><a href="/about">About</a></p>
+        <p><a href="/contact">Contact</a></p>
+    </div>
+</footer>
+
+<style>
+/* footer Styling*/
+
+footer {
+    border-top: 1px solid var(--text-color-grey);
+    margin: 80px auto 0px;
+    padding: 40px clamp(20px, 4vw, 56px) 36px;
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 32px;
+    font-size: 13px;
+    color: var(--text-color-grey);
+}
+
+div:nth-of-type(1) a.logo {
+    font-family: Caveat, cursive;
+    font-size: 32px;
+    color: var(--accent-color);
+    line-height: 1;
+    margin-bottom: 6px;
+    text-decoration: none;
+
+}
+
+div:nth-of-type(2) h3,
+div:nth-of-type(3) h3 {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+div:nth-of-type(2) a,
+div:nth-of-type(3) a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(31, 63, 199, 0.333);
+    padding-bottom: 1px;
+    align-self: flex-start;
+}
+
+a:hover{
+    color: var(--text-color);
+}
+</style>

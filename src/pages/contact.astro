@@ -1,0 +1,26 @@
+---
+import Header from "../components/header.astro";
+
+import ContactIntroduction from "../components/contact-introduction.astro";
+
+import Footer from "../components/footer.astro";
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="generator" content={Astro.generator} />
+    <title>About</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+    <Header />
+    <main>
+        <ContactIntroduction />
+    </main>
+    <Footer/>
+</body>
+</html>
+

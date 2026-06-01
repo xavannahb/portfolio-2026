@@ -1,0 +1,83 @@
+<section>
+    <!-- Squigles -->
+    <div class="line">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" width="300" height="60" fill="none">
+            <path d="M5,30 C40,10 70,55 110,30 C150,5 180,55 220,25 C240,10 260,35 290,20"
+            stroke="#1f3fc7"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="stroke-dasharray: 426; stroke-dashoffset: 426; animation: draw-path 1.2s ease-in-out forwards;"/>
+        </svg>
+    </div>
+    <div class="star">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60" fill="none">
+            <path d="M30,5 L30,55 M5,30 L55,30 M12,12 L48,48 M48,12 L12,48"
+                stroke="#1f3fc7"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="stroke-dasharray: 202; stroke-dashoffset: 202; animation: draw-path 1.2s ease-in-out forwards;"/>
+        </svg>
+    </div>
+
+    <div class="img-grid">
+        <div class="item-one"></div>
+        <div class="item-two"></div>
+        <div class="item-three"></div>
+        <div class="item-four"></div>
+        <div class="item-five"></div>
+        <div class="item-six"></div>
+    </div>
+
+</section>
+<style>
+    section {
+        padding: clamp(40px, 8vw, 100px) 0px clamp(80px, 12vw, 140px);
+        text-align: center;
+    }
+
+    /* Squigles positioneren */
+    div.line {
+        position: absolute;
+        top: 73%;
+        right: 20%;
+        pointer-events: none;
+    }
+
+    div.star {
+        position: absolute;
+        top: 90%;
+        right: 14%;
+        pointer-events: none;
+    }
+
+    /* Grid styling */
+    .img-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: clamp(16px, 2vw, 28px);
+        align-items: start;
+    }
+
+    div.item-one {
+        grid-column: span 5;
+        grid-row: span 1;
+        height: 250px;
+        background-color: #cce5ff;
+    }
+
+    div.item-two {
+        grid-column: span 7;
+        grid-row: span 3;
+        background-color: #cce5ff;
+    }
+
+    div.item-three {
+        grid-column: span 4;
+        grid-row: span 2;
+        background-color: #cce5ff;
+    }
+</style>

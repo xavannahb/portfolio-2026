@@ -1,0 +1,224 @@
+<section>
+    <!-- Squigles -->
+    <div class="loop">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120" fill="none">
+            <path d="M5,40 C20,5 50,5 60,30 C70,55 35,60 30,35 C25,15 70,15 85,40 C100,65 65,75 60,50 C55,25 110,25 125,55 C140,80 100,90 95,65 C90,40 150,40 165,70 C180,100 130,110 125,80"
+            stroke="#1f3fc7"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="stroke-dasharray: 564; stroke-dashoffset: 564; animation: draw-path 1.2s ease-in-out forwards;"/>
+        </svg>
+    </div>
+    <div class="star">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60" fill="none">
+            <path d="M30,5 L30,55 M5,30 L55,30 M12,12 L48,48 M48,12 L12,48"
+                stroke="#1f3fc7"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="stroke-dasharray: 202; stroke-dashoffset: 202; animation: draw-path 1.2s ease-in-out forwards;"/>
+        </svg>
+    </div>
+
+    <!-- Projects grid -->
+
+    <div class="img-grid">
+        <a href="https://xavannahb.github.io/crazy-starships/" class="projects nebula">
+            <div class="projects-inner">
+                <img src="/images/nebula.png" alt="Project 1">
+            </div>
+            <div class="title">
+                <p>01</p>
+                <h2>Nebula Explorer</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>Category 1</li>
+                    <li>Category 2</li>
+                    <li>Category 3</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="https://xavannahb.github.io/erfbelasting-ns//" class="projects ns">
+            <div class="projects-inner">
+                <img src="/images/erfbelasting.png" alt="Project 2">
+            </div>
+            <div class="title">
+                <p>02</p>
+                <h2>Erfbelasting NS</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>Category 1</li>
+                    <li>Category 2</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="https://xavannahb.github.io/control-panel-css/" class="projects minecraft-bloem">
+            <div class="projects-inner">
+                <img src="/images/minecraft-bloem.png" alt="Project 3">
+            </div>
+            <div class="title">
+                <p>03</p>
+                <h2>Control panel CSS</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>Category 1</li>
+                    <li>Category 2</li>
+                </ul>
+            </div>
+        </a>
+
+
+    </div>
+
+</section>
+<style>
+    section {
+        padding: clamp(40px, 6vw, 80px) 0px 60px;
+        position: relative;
+    }
+
+    /* Squigles positioneren */
+    div.loop {
+        position: absolute;
+        top: calc(38% + 20px);
+        right: 3%;
+        pointer-events: none;
+    }
+
+    div.star {
+        position: absolute;
+        top: calc(55% + 20px);
+        left: 30%;
+        pointer-events: none;
+    }
+    @keyframes draw-path {
+        to { stroke-dashoffset: 0; }
+    }
+
+
+    /* Porjects grid */
+
+    .img-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: clamp(16px, 3vw, 48px);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px, rgba(0, 0, 0, 0.4) 0px 18px 36px -22px;
+    }
+
+    .title {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        margin: 0.75rem 0 0;
+    }
+
+    .title p {
+        font-size: 12px;
+        color: var(--text-color-grey);
+        letter-spacing: 0.05em;
+    }
+
+    .title h2 {
+        color: var(--text-color);
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 0;
+        flex: 1;
+    }
+
+    .categories ul {
+        display: flex;
+        gap: 6px;
+        list-style: none;
+        padding: 0;
+        margin: 0.75rem 0 0;
+    }
+
+    .categories li {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 0.5px solid currentColor;
+        border-radius: 999px;
+        padding: 4px 12px;
+        color: var(--text-color-grey);
+    }
+
+    
+
+    .nebula img:nth-of-type(1) {
+        transform: rotate(1deg);
+    }
+
+    .minecraft-bloem img:nth-of-type(1) {
+        transform: rotate(-2deg);
+    }
+
+    a:hover .title, a:hover .categories {
+        color: var(--text-color-grey);
+        transform: translateY(-4px);
+        transition: transform 0.3s ease;  
+    }
+
+    .nebula:hover {
+        & img:nth-of-type(1) {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .ns:hover {
+        & img:nth-of-type(1) {
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .minecraft-bloem:hover {
+        & img:nth-of-type(1) {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    @media (width > 800px) {
+        .img-grid {
+            grid-template-columns: repeat(11, 1fr);
+        }
+
+        .nebula {
+            grid-column:  1 / 7;
+            translate: 20px 0x;
+        }
+
+        .ns {
+            padding-top: 48px;
+            grid-column:  7 / 12;
+        }
+
+        .minecraft-bloem {
+            padding-top: 48px;
+            grid-column:  1 / 5;
+        }
+    }
+
+    
+</style>

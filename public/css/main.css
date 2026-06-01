@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Caveat';
+    src: url(/fonts/Caveat-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url(/fonts/SpaceGrotesk-VariableFont_wght.ttf) format('truetype');
+}
+
+:root {
+    /* Spacing */
+    --spacing: 1rem;
+
+    /* colors */
+    --background-color: #f3ede1;
+    --text-color: #1a1a1a;
+    --accent-color: #1f3fc7;
+    --text-color-grey: rgb(90, 85, 76);
+}
+
+/* Main styling  */
+body {
+    background-color: var(--background-color);
+    font-family: 'Space Grotesk', system-ui, Arial, sans-serif;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Styling*/
+main {
+    max-width: 1280px;
+    margin: 0px auto;
+    padding: 0px clamp(20px, 4vw, 56px) 80px;
+    position: relative;
+}
+
+@media (width > 800px) {
+
+    main {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+}
