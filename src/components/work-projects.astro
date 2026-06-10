@@ -34,9 +34,9 @@
             </div>
             <div class="categories">
                 <ul>
-                    <li>Category 1</li>
-                    <li>Category 2</li>
-                    <li>Category 3</li>
+                    <li>Accesibility</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
                 </ul>
             </div>
         </a>
@@ -51,8 +51,9 @@
             </div>
             <div class="categories">
                 <ul>
-                    <li>Category 1</li>
-                    <li>Category 2</li>
+                    <li>Accesibility</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
                 </ul>
             </div>
         </a>
@@ -67,12 +68,43 @@
             </div>
             <div class="categories">
                 <ul>
-                    <li>Category 1</li>
-                    <li>Category 2</li>
+                    <li>CSS</li>
+                    <li>Animations</li>
                 </ul>
             </div>
         </a>
 
+        <a href="https://xavannahb.github.io/voorstel-website/" class="projects pinterest-board">
+            <div class="projects-inner">
+                <img src="/images/pinterest.png" alt="Project 4">
+            </div>
+            <div class="title">
+                <p>04</p>
+                <h2>Xavannah's Board</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="https://purple-pulsar.onrender.com/" class="projects amsterdam-horeca">
+            <div class="projects-inner">
+                <img src="/images/amsterdam-horeca.png" alt="Project 5">
+            </div>
+            <div class="title">
+                <p>05</p>
+                <h2>Amsterdam Horeca</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>Astro</li>
+                    <li>API</li>
+                </ul>
+            </div>
+        </a>
 
     </div>
 
@@ -163,7 +195,7 @@
     }
 
     
-
+    /* Hover states for each project */
     .nebula img:nth-of-type(1) {
         transform: rotate(1deg);
     }
@@ -199,6 +231,20 @@
         }
     }
 
+    .pinterest-board:hover {
+        & img:nth-of-type(1) {
+            transform: rotate(-1deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .amsterdam-horeca:hover {
+        & img:nth-of-type(1) {
+            transform: rotate(1deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
     @media (width > 800px) {
         .img-grid {
             grid-template-columns: repeat(11, 1fr);
@@ -218,6 +264,15 @@
             padding-top: 48px;
             grid-column:  1 / 5;
         }
+
+        .pinterest-board {
+            grid-column:  5 / 11;
+        }
+
+        .amsterdam-horeca {
+            grid-column:  1 / 7;
+        }
+
     }
 
     
