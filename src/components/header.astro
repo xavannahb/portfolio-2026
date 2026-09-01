@@ -1,13 +1,41 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
 <header class="navbar">
     <ul>
         <li><a href="/" class="logo">Xavannah Baars</a></li>
-        <li><button><img src="images/menu-dropdown.svg"></button></li>
+        <li><button><img src="../../images/menu-dropdown.svg"></button></li>
     </ul>
         <nav>
             <ul>
-                <li><a href="/work">work</a></li>
-                <li><a href="/about">about</a></li>
-                <li><a href="/contact">contact</a></li>
+                <li><a href="/" class="logo">Xavannah Baars</a></li>
+                <li><a href="/work">Work</a>
+                {currentPath.startsWith("/work") && (
+                        <div class="scribble">
+                            <svg viewBox="0 0 230 12" width="85" fill="none" aria-hidden="true">
+                            <path class="draw" d="M3,8 C60,2 150,12 227,5" stroke="#1f3fc7" stroke-width="3.8" stroke-linecap="round"></path>
+                        </svg>
+                    </div>
+                )}</li>
+
+                <li><a href="/about">About</a>
+                    {currentPath.startsWith("/about") && (
+                        <div class="scribble">
+                            <svg viewBox="0 0 230 12" width="50" fill="none" aria-hidden="true">
+                            <path class="draw" d="M3,8 C60,2 150,12 227,5" stroke="#1f3fc7" stroke-width="6" stroke-linecap="round"></path>
+                        </svg>
+                    </div>
+                )}</li>
+
+                <li><a href="/contact">Contact</a>
+                    {currentPath.startsWith("/contact") && (
+                        <div class="scribble">
+                            <svg viewBox="0 0 230 12" width="70" fill="none" aria-hidden="true">
+                            <path class="draw" d="M3,8 C60,2 150,12 227,5" stroke="#1f3fc7" stroke-width="4.5" stroke-linecap="round"></path>
+                        </svg>
+                    </div>
+                )}</li>
             </ul>
         </nav>
 </header>
@@ -16,6 +44,7 @@
 
     header {
         position: sticky;
+        z-index: 5; /* zelfde of hoger, ipv 1 */
     }
 
     header ul {
@@ -34,7 +63,7 @@
         position: fixed;
         inset: 0;
         background-color: var(--background-color);
-        z-index: 1;
+        z-index: 5; /* zelfde of hoger, ipv 1 */
         translate: -100%;
         transition: 0.5s;
     }
@@ -50,7 +79,7 @@
 
     header button {
         position: relative;
-        z-index: 2;
+        z-index: 6;
         background-color: var(--background-color);
         border: none;
         padding: 0;
@@ -63,8 +92,14 @@
     header li {
         padding: 1em;
         margin: 0;
+        position: relative;
     }
-
+    .scribble {
+        position: absolute;
+        left: 1em; /* zelfde als je li padding */
+        bottom: 0;
+        pointer-events: none;
+    }
     header nav ul:nth-of-type(1) {
         display: flex;
         flex-direction: column;
@@ -73,7 +108,7 @@
 
     header.navbar ul li a.logo {
         font-family: Caveat, cursive;
-        font-size: 32px;
+        font-size: var(--text-logo);
         color: var(--accent-color);
         line-height: 1;
         margin-bottom: 6px;
@@ -116,9 +151,23 @@
         justify-content: space-between;
     }
 
+    header nav ul:nth-of-type(1) li:nth-of-type(1) a.logo {
+        display: none;
+    }
+
     header button {
         display: none;
     }
     }
 </style>
-   
+<script>
+    // @ts-nocheck
+    const menuButton = document.querySelector("header button")
+    const deNav = document.querySelector("header nav")
+
+    menuButton.onclick = toggleMenu 
+
+    function toggleMenu() {
+        deNav.classList.toggle("open")
+    }
+</script>

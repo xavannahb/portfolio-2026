@@ -24,40 +24,40 @@
     </div>
 
     <!-- Content -->
-    <p>Voortgang</p>
-    <h1>Leerdoelen en
-        <span class="lastname">Voortgangsgesprekken</span></h1>
-    <p>Tijdens de minor hebben we 3 voortgangsgesprekken om te kijken hoe het met onze leerdoelen gaat. In deze gesprekken krijgen we feedback op ons proces en hulp om de leerdoelen aan te scherpen waar dat nodig is.</p>
+    <p>About</p>
+    <h1>Im
+        <span class="lastname">Xavannah</span></h1>
+    <p>Tijdens de minor hebben zijn we bij verschillende gastcolleges geweest en op bezoek geweest bij bedrijven om inzicht te krijgen in het bedrijfsleven.</p>
     
 
 </section>
 <style>
     section {
-        padding: clamp(40px, 6vw, 80px) 0px 50px;
+        padding: clamp(40px, 6vw, 80px) 0px 60px;
         position: relative;
     }
 
-    /* Squigles positioneren */
     .squigles-container {
         position: relative;
     }
 
+    /* Squigles positioneren */
     div.loop {
         position: absolute;
         top: clamp(5px, 1vw, 10px);
         right: 8%;
-        width: clamp(110px, 14vw, 200px);
+        width: clamp(110px, 14vw, 200px); /* pas aan op basis van de viewBox-breedte */
         pointer-events: none;
     }
 
     div.star {
         position: absolute;
-        top: clamp(150px, 28vw, 260px);
+        top:clamp(150px, 28vw, 260px);
         left: 1%;
-        width: clamp(35px, 5vw, 60px);
+        width: clamp(35px, 5vw, 60px); /* pas aan op basis van de viewBox-breedte */
         pointer-events: none;
     }
-    
+
     @keyframes draw-path {
         to { stroke-dashoffset: 0; }
     }
@@ -69,7 +69,6 @@
         display: block;
     }
 
-    /* Content */
     p:nth-of-type(1) {
         font-size: 12px;
         letter-spacing: 0.22em;
@@ -81,7 +80,7 @@
     
     h1 {
         font-family: Caveat, cursive;
-        font-size: clamp(40px, 9vw, 132px);
+        font-size: clamp(56px, 9vw, 132px);
         font-weight: 600;
         line-height: 0.9;
         letter-spacing: -0.01em;

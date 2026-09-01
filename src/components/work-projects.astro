@@ -21,65 +21,14 @@
         </svg>
     </div>
 
-    <!-- Projects grid -->
-
+    <!-- Content -->
     <div class="img-grid">
-        <a href="https://xavannahb.github.io/crazy-starships/" class="projects nebula">
+        <a href="/work/sprint0" class="projects sprint0">
             <div class="projects-inner">
-                <img src="/images/nebula.png" alt="Project 1">
+                <img src="/images/pinterest.png" alt="Project 1">
             </div>
             <div class="title">
                 <p>01</p>
-                <h2>Nebula Explorer</h2>
-            </div>
-            <div class="categories">
-                <ul>
-                    <li>Accesibility</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                </ul>
-            </div>
-        </a>
-
-        <a href="https://xavannahb.github.io/erfbelasting-ns//" class="projects ns">
-            <div class="projects-inner">
-                <img src="/images/erfbelasting.png" alt="Project 2">
-            </div>
-            <div class="title">
-                <p>02</p>
-                <h2>Erfbelasting NS</h2>
-            </div>
-            <div class="categories">
-                <ul>
-                    <li>Accesibility</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                </ul>
-            </div>
-        </a>
-
-        <a href="https://xavannahb.github.io/control-panel-css/" class="projects minecraft-bloem">
-            <div class="projects-inner">
-                <img src="/images/minecraft-bloem.png" alt="Project 3">
-            </div>
-            <div class="title">
-                <p>03</p>
-                <h2>Control panel CSS</h2>
-            </div>
-            <div class="categories">
-                <ul>
-                    <li>CSS</li>
-                    <li>Animations</li>
-                </ul>
-            </div>
-        </a>
-
-        <a href="https://xavannahb.github.io/voorstel-website/" class="projects pinterest-board">
-            <div class="projects-inner">
-                <img src="/images/pinterest.png" alt="Project 4">
-            </div>
-            <div class="title">
-                <p>04</p>
                 <h2>Xavannah's Board</h2>
             </div>
             <div class="categories">
@@ -90,7 +39,57 @@
             </div>
         </a>
 
-        <a href="https://purple-pulsar.onrender.com/" class="projects amsterdam-horeca">
+        <a href="/work/browsertechnologies" class="projects ns">
+            <div class="projects-inner">
+                <img src="/images/erfbelasting.png" alt="Project 2">
+            </div>
+            <div class="title">
+                <p>02</p>
+                <h2>Erfbelasting NS</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="/work/css" class="projects minecraft-bloem">
+            <div class="projects-inner">
+                <img src="/images/minecraft-bloem.png" alt="Project 3">
+            </div>
+            <div class="title">
+                <p>03</p>
+                <h2>Control panel CSS</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>HTMl</li>
+                    <li>CSS</li>
+                    <li>Animations</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="/vakken/hackaton" class="projects nebula">
+            <div class="projects-inner">
+                <img src="/images/nebula.png" alt="Project 4">
+            </div>
+            <div class="title">
+                <p>04</p>
+                <h2>Nebula Explorer</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="/work/api" class="projects amsterdam-horeca">
             <div class="projects-inner">
                 <img src="/images/amsterdam-horeca.png" alt="Project 5">
             </div>
@@ -100,8 +99,62 @@
             </div>
             <div class="categories">
                 <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
                     <li>Astro</li>
                     <li>API</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="/work/humancomputerinteraction" class="projects audigram">
+            <div class="projects-inner">
+                <img src="/images/audigram.png" alt="Project 6">
+            </div>
+            <div class="title">
+                <p>06</p>
+                <h2>Audigram</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="/work/meesterproef" class="projects meesterproef">
+            <div class="projects-inner">
+                <img src="/images/tavi.png" alt="Project 7">
+            </div>
+            <div class="title">
+                <p>07</p>
+                <h2>Meesterproef TAVI</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Astro</li>
+                    <li>API</li>
+                </ul>
+            </div>
+        </a>
+
+        <a href="/work/meesterschap" class="projects meesterschap">
+            <div class="projects-inner">
+                <img src="/images/meesterschap.png" alt="Project 8">
+            </div>
+            <div class="title">
+                <p>08</p>
+                <h2>Meesterschap</h2>
+            </div>
+            <div class="categories">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Astro</li>
                 </ul>
             </div>
         </a>
@@ -129,6 +182,7 @@
         left: 30%;
         pointer-events: none;
     }
+    
     @keyframes draw-path {
         to { stroke-dashoffset: 0; }
     }
@@ -196,12 +250,16 @@
 
     
     /* Hover states for each project */
-    .nebula img:nth-of-type(1) {
+    .sprint0 img:nth-of-type(1) {
         transform: rotate(1deg);
     }
 
     .minecraft-bloem img:nth-of-type(1) {
         transform: rotate(-2deg);
+    }
+
+    .amsterdam-horeca img:nth-of-type(1) {
+        transform: rotate(1deg);
     }
 
     a:hover .title, a:hover .categories {
@@ -210,7 +268,7 @@
         transition: transform 0.3s ease;  
     }
 
-    .nebula:hover {
+    .sprint0:hover {
         & img:nth-of-type(1) {
             transform: rotate(0deg);
             transition: transform 0.3s ease;
@@ -231,7 +289,7 @@
         }
     }
 
-    .pinterest-board:hover {
+    .nebula:hover {
         & img:nth-of-type(1) {
             transform: rotate(-1deg);
             transition: transform 0.3s ease;
@@ -240,7 +298,27 @@
 
     .amsterdam-horeca:hover {
         & img:nth-of-type(1) {
-            transform: rotate(1deg);
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .audigram:hover {
+        & img:nth-of-type(1) {
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .meesterproef:hover {
+        & img:nth-of-type(1) {
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+    }
+    .meesterschap:hover {
+        & img:nth-of-type(1) {
+            transform: rotate(-1deg);
             transition: transform 0.3s ease;
         }
     }
@@ -250,7 +328,7 @@
             grid-template-columns: repeat(11, 1fr);
         }
 
-        .nebula {
+        .sprint0 {
             grid-column:  1 / 7;
             translate: 20px 0x;
         }
@@ -265,12 +343,26 @@
             grid-column:  1 / 5;
         }
 
-        .pinterest-board {
+        .nebula {
             grid-column:  5 / 11;
         }
 
         .amsterdam-horeca {
             grid-column:  1 / 7;
+        }
+
+        .audigram {
+            padding-top: 48px;
+            grid-column:  7 / 12;
+        }
+
+        .meesterproef {
+            padding-top: 48px;
+            grid-column:  1 / 5;
+        }
+
+        .meesterschap {
+            grid-column:  5 / 11;
         }
 
     }

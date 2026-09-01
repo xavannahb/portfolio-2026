@@ -1,0 +1,314 @@
+---
+// @ts-nocheck 
+import { vakken } from '../../vakken.js';
+
+import Header from "../../components/header.astro";
+import Footer from "../../components/footer.astro";
+
+export async function getStaticPaths() {
+  return Object.keys(vakken).map((work) => ({
+    params: { work }
+  }));
+}
+
+const { work } = Astro.params;
+const data = vakken[work];
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="generator" content={Astro.generator} />
+    <title>Meesterschap blog</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="images/xb.svg" href="../images/xb.svg">
+</head>
+<body>
+    <Header />
+    <main>
+        <a href="/work"><span style="margin-right: 10px; display: inline-block; transform: translateY(1px);">←</span>Terug / {data.num} </a>
+        <section class="intro">
+            <!-- Squigles -->
+            <div class="squigles-container"> 
+                <div class="loop">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120" fill="none">
+                        <path d="M5,40 C20,5 50,5 60,30 C70,55 35,60 30,35 C25,15 70,15 85,40 C100,65 65,75 60,50 C55,25 110,25 125,55 C140,80 100,90 95,65 C90,40 150,40 165,70 C180,100 130,110 125,80"
+                        stroke="#1f3fc7"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        style="stroke-dasharray: 564; stroke-dashoffset: 564; animation: draw-path 1.2s ease-in-out forwards;"/>
+                    </svg>
+                </div>
+                <div class="star">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60" fill="none">
+                        <path d="M30,5 L30,55 M5,30 L55,30 M12,12 L48,48 M48,12 L12,48"
+                            stroke="#1f3fc7"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            style="stroke-dasharray: 202; stroke-dashoffset: 202; animation: draw-path 1.2s ease-in-out forwards;"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <p>{data.vak}</p>
+            <h1>{data.titel}</h1>
+            <p>{data.kortebeschrijving}</p>
+        </section>
+        <section class="info">
+            <ul>
+                <li><p class="info-titel">Subject</p><p>{data.vak}</p></li>
+                <li><p class="info-titel">Docent</p><p>{data.docent}</p></li>
+                <li><p class="info-titel">Time</p><p>{data.tijd}</p></li>
+                <li><p class="info-titel">Status</p><p>{data.status}</p></li>
+            </ul>
+        </section>
+        <section class="afbeelding">
+            <h3>Het ontwerp</h3>
+            <a href={data.link}>
+                <img src={data.introimg} alt={data.titel}/>
+            </a>
+        </section>
+        <section class="gemaakt">
+            <h3>Wat heb ik gemaakt?</h3>
+            <p>{data.langebeschrijving}</p>
+        </section>
+        <section class="geleerd">
+            <h3>Wat heb ik geleerd?</h3>
+            <ul>
+                <li><span>01.</span>{data.geleerd1}</li>
+                <li><span>02.</span>{data.geleerd2}</li>
+                <li><span>03.</span>{data.geleerd3}</li>
+                <li><span>04.</span>{data.geleerd4}</li>
+            </ul>
+        </section>
+    </main>
+    <Footer/>
+</body>
+</html>
+
+<style>
+    /* Squigles positioneren */
+    .squigles-container {
+        position: relative;
+    }
+
+    div.loop {
+        position: absolute;
+        top: clamp(5px, 1vw, 10px);
+        right: 8%;
+        width: clamp(110px, 14vw, 200px);
+        pointer-events: none;
+    }
+
+    div.star {
+        position: absolute;
+        top:clamp(280px, 28vw, 310px);
+        left: 1%;
+        width: clamp(35px, 5vw, 60px);
+        pointer-events: none;
+    }
+
+    @keyframes draw-path {
+        to { stroke-dashoffset: 0; }
+    }
+
+    .loop svg,
+    .star svg {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Content */
+    a:nth-of-type(1) {
+        display: inline-flex;
+        align-items: center;
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 14px 6px;
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--text-color);
+    }
+
+    section.intro {
+        padding: clamp(40px, 6vw, 80px) 0px 50px;
+        position: relative;
+
+        p:nth-of-type(1) {
+            font-size: 12px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--text-color-grey);
+            position: relative;
+            display: inline-block;
+        }
+    
+        h1 {
+            font-family: Caveat, cursive;
+            font-size: clamp(56px, 9vw, 132px);
+            font-weight: 600;
+            line-height: 0.9;
+            letter-spacing: -0.01em;
+            margin: 20px 0px 0px;
+        }
+
+        p {
+            margin-top: 32px;
+            max-width: 540px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-color-grey);
+        }
+    }
+
+    section.info {
+        & ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: 1px solid var(--text-color-grey);
+            border-bottom: 1px solid var(--text-color-grey);
+            
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+        }
+
+        p.info-titel {
+            font-size: 12px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--text-color-grey);
+            position: relative;
+        }
+
+
+    }
+
+    section.afbeelding {
+        position: relative;
+
+        &.afbeelding img {
+            padding-top: 60px;
+            width: 100%;
+            display: block;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px, rgba(0, 0, 0, 0.4) 0px 18px 36px -22px;
+        }
+
+        h3 {
+            position: absolute;
+            margin: 0;
+            font-family: Caveat, cursive;
+            font-size: 4rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            translate: 0px 0px 3px;
+        }
+    }
+
+    section.gemaakt {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        border-bottom: 1px solid var(--text-color-grey);
+
+        &.gemaakt h3 {
+            padding-top: 1rem;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        &.gemaakt ul {
+            padding: 0;
+        } 
+
+        &.gemaakt li {
+            list-style: none; 
+            display: flex;
+            align-items: start;
+            padding: 1.25rem 0;
+        }
+
+    }
+    section.geleerd {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+        &.geleerd h3 {
+            padding-top: 1rem;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        &.geleerd ul {
+            padding: 0;
+        } 
+
+        &.geleerd li {
+            list-style: none; 
+            display: flex;
+            align-items: start;
+            padding: 1.25rem 0;
+            /* border-top: 1px dashed var(--text-color-grey); */
+        }
+
+        &.geleerd span {
+            padding: 0px 50px 0px 0px;
+            color: var(--accent-color);
+            font-style: italic;
+            font-family: Caveat, cursive;
+            font-size: 1.5rem;
+        }
+    }
+    
+
+    @media (width > 600px) {
+        section.info ul {
+            flex-direction: row;
+        }
+
+        section.gemaakt {
+            padding: 3rem 0rem;
+            grid-template-columns: repeat(10, 1fr);
+
+            &.gemaakt h3 {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+
+            &.gemaakt p {
+                grid-column-start: 4;
+                grid-column-end: 11;
+            }
+        }  
+
+        section.geleerd {
+            grid-template-columns: repeat(10, 1fr);
+
+            &.geleerd h3 {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+
+            &.geleerd ul {
+                grid-column-start: 4;
+                grid-column-end: 11;
+                padding: 0;
+            }
+        }  
+    }   
+
+</style>

@@ -1,8 +1,8 @@
 ---
 import Header from "../components/header.astro";
 
-import HomeIntro from "../components/home-introduction.astro";
-import HomePictures from "../components/home-pictures.astro";
+import HomeIntro from "../components/home-introductie.astro";
+import HomeLeerdoelen from "../components/leerdoelen.astro";
 
 import Footer from "../components/footer.astro";
 ---
@@ -12,16 +12,15 @@ import Footer from "../components/footer.astro";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="generator" content={Astro.generator} />
-    <title>Portfolio</title>
+    <title>Meesterschap blog</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="images/xb.svg" href="images/xb.svg">
-    <script src="javascript.js" defer></script>
 </head>
 <body>
     <Header />
     <main>
         <HomeIntro/>
-        <HomePictures/>
+        <HomeLeerdoelen/>
     </main>
     <Footer/>
 </body>
