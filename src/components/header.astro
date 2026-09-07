@@ -1,173 +1,105 @@
----
-const currentPath = Astro.url.pathname;
----
-
-<header class="navbar">
-    <ul>
-        <li><a href="/" class="logo">Xavannah Baars</a></li>
-        <li><button><img src="../../images/menu-dropdown.svg"></button></li>
-    </ul>
+<header>
+    <div id="progress-bar"></div>
+    <div class="bar">
+        <a href="#" class="logo"><span class="dot"></span>XAVANNAH BAARS</a>
         <nav>
-            <ul>
-                <li><a href="/" class="logo">Xavannah Baars</a></li>
-                <li><a href="/work">Work</a>
-                {currentPath.startsWith("/work") && (
-                        <div class="scribble">
-                            <svg viewBox="0 0 230 12" width="85" fill="none" aria-hidden="true">
-                            <path class="draw" d="M3,8 C60,2 150,12 227,5" stroke="#1f3fc7" stroke-width="3.8" stroke-linecap="round"></path>
-                        </svg>
-                    </div>
-                )}</li>
-
-                <li><a href="/about">About</a>
-                    {currentPath.startsWith("/about") && (
-                        <div class="scribble">
-                            <svg viewBox="0 0 230 12" width="50" fill="none" aria-hidden="true">
-                            <path class="draw" d="M3,8 C60,2 150,12 227,5" stroke="#1f3fc7" stroke-width="6" stroke-linecap="round"></path>
-                        </svg>
-                    </div>
-                )}</li>
-
-                <li><a href="/contact">Contact</a>
-                    {currentPath.startsWith("/contact") && (
-                        <div class="scribble">
-                            <svg viewBox="0 0 230 12" width="70" fill="none" aria-hidden="true">
-                            <path class="draw" d="M3,8 C60,2 150,12 227,5" stroke="#1f3fc7" stroke-width="4.5" stroke-linecap="round"></path>
-                        </svg>
-                    </div>
-                )}</li>
-            </ul>
+            <a href="#about">ABOUT</a>
+            <a href="#work">WORK</a>
+            <a href="#cv">CV</a>
+            <a href="#contact">CONTACT</a>
         </nav>
+    </div>
 </header>
+
 <style>
-    /* Header styling */
+header {
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    font-family: 'Courier New', Courier, monospace;
+}
 
-    header {
-        position: sticky;
-        z-index: 5; /* zelfde of hoger, ipv 1 */
-    }
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0%;
+    background: var(--red);
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+}
 
-    header ul {
-        list-style: none;
-        padding: 0;
-    }
+.bar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 22px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-    header ul:nth-of-type(1) {
-        margin: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    text-decoration: none;
+  }
 
-    header nav {
-        position: fixed;
-        inset: 0;
-        background-color: var(--background-color);
-        z-index: 5; /* zelfde of hoger, ipv 1 */
-        translate: -100%;
-        transition: 0.5s;
-    }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
 
-    header nav.open {
-        translate: 0;
-    }
-    
-    header img {
-        width: 30px;
-        height: 30px;
-    }
+  nav {
+    display: flex;
+    gap: 40px;
+  }
 
-    header button {
-        position: relative;
-        z-index: 6;
-        background-color: var(--background-color);
-        border: none;
-        padding: 0;
-    }
+  nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
 
-    header nav ul {
-        padding: 0;
-    }
+  nav a:hover,
+  nav a:focus-visible {
+    color: var(--red);
+  }
 
-    header li {
-        padding: 1em;
-        margin: 0;
-        position: relative;
-    }
-    .scribble {
-        position: absolute;
-        left: 1em; /* zelfde als je li padding */
-        bottom: 0;
-        pointer-events: none;
-    }
-    header nav ul:nth-of-type(1) {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-    }
+  nav a:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 4px;
+  }
 
-    header.navbar ul li a.logo {
-        font-family: Caveat, cursive;
-        font-size: var(--text-logo);
-        color: var(--accent-color);
-        line-height: 1;
-        margin-bottom: 6px;
-        text-transform: none;
+  @media (max-width: 640px) {
+    .bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 20px 24px;
     }
-
-    header a { 
-        color: var(--text-color);
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 12px;
+    nav {
+      gap: 24px;
+      flex-wrap: wrap;
     }
-
-    header a:hover, header a:active, header a:focus {
-        color:  var(--text-color);
-    }
-
-    header a.active-state {
-        color: var(--text-color);
-    }
-
-    @media (width > 800px) {
-    header {
-        width: 85%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    header nav {
-        position: relative;
-        background-color: none;
-        translate: 0;
-        transition: 0.5s;
-    }
-
-    header nav ul:nth-of-type(1) {
-        flex-direction: unset;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    header nav ul:nth-of-type(1) li:nth-of-type(1) a.logo {
-        display: none;
-    }
-
-    header button {
-        display: none;
-    }
-    }
+  }
 </style>
+
 <script>
-    // @ts-nocheck
-    const menuButton = document.querySelector("header button")
-    const deNav = document.querySelector("header nav")
-
-    menuButton.onclick = toggleMenu 
-
-    function toggleMenu() {
-        deNav.classList.toggle("open")
-    }
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    const bar = document.getElementById('progress-bar');
+    if (bar) bar.style.width = progress + '%';
+  });
 </script>

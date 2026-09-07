@@ -1,0 +1,224 @@
+<section id="intro">
+    <div class="meta mono">
+    <div class="left">
+        <p>CMD Student, Amsterdam</p>
+        <p>UX Design &amp; Front-End</p>
+    </div>
+    <div class="right">
+        <span class="status-dot"></span>
+        <span>Open for internships</span>
+    </div>
+    </div>
+    
+    <div class="hero">
+    <h1 class="hero-name">
+        <span class="first">xavannah</span>
+        <span class="last">baars<span class="dot">.</span></span>
+    </h1>
+    <div class="hero-photo" aria-hidden="true"></div>
+    <div class="fig-tag mono">Fig. 01 — me, off duty</div>
+    </div>
+    
+    <div class="intro">
+    <p>Hi — I'm a Communication &amp; Multimedia Design student on my way to becoming a UX designer and front-end developer. I care as much about how a thing feels as how it's built.</p>
+    <div class="projects mono">
+        <div class="years">2024 — Present</div>
+        <a href="#work" class="see-work">See the work</a>
+    </div>
+    </div>
+    
+    <div class="skills mono">
+    <span>UX Research</span><span class="dot">◆</span>
+    <span>Wireframing</span><span class="dot">◆</span>
+    <span>Interaction Design</span><span class="dot">◆</span>
+    <span>HTML / CSS</span><span class="dot">◆</span>
+    <span>JavaScript</span><span class="dot">◆</span>
+    <span>Prototyping</span><span class="dot">◆</span>
+    <span>Figma</span><span class="dot">◆</span>
+    </div>
+
+</section>
+<style>
+    .mono {
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  section {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+}
+ 
+  /* ---------- top meta bar ---------- */
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 28px 40px 0;
+    font-size: 12px;
+    position: relative;
+    z-index: 3;
+  }
+ 
+  .meta .left p { margin: 0 0 4px; }
+ 
+  .meta .right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+ 
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+ 
+  /* ---------- hero: name flows over the photo's left edge ---------- */
+  .hero {
+    position: relative;
+    padding: 40px 0 0;
+  }
+ 
+  .hero-name {
+    position: relative;
+    margin: 0;
+    line-height: 0.82;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    padding-left: 40px;
+  }
+ 
+  .hero-name .first {
+    display: block;
+    font-size: clamp(72px, 12.5vw, 190px);
+    color: var(--text);
+    position: relative;
+    z-index: 2;
+  }
+ 
+  .hero-name .last {
+    display: block;
+    font-size: clamp(72px, 12.5vw, 190px);
+    color: var(--red);
+    margin-top: 10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-photo {
+    position: relative;
+    z-index: 1;
+    margin-top: -120px;
+    margin-left: 46%;
+    height: 380px;
+    background:
+      linear-gradient(180deg, rgba(28,27,25,0) 60%, rgba(28,27,25,0.35) 100%),
+      repeating-linear-gradient(135deg, #8a8a86 0 2px, #6f6f6c 2px 4px);
+    filter: grayscale(1);
+  }
+  /* Swap the background above for your real photo:
+     .hero-photo { background: url('your-photo.jpg') center/cover no-repeat; filter: grayscale(1); } */
+ 
+  .fig-tag {
+    position: absolute;
+    left: 46%;
+    bottom: -1px;
+    z-index: 2;
+    background: var(--red);
+    color: var(--white);
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+ 
+  /* ---------- intro row ---------- */
+  .intro {
+    border-top: 1px solid rgba(28,27,25,0.2);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 32px 40px;
+  }
+ 
+  .intro p {
+    max-width: 46ch;
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+  }
+ 
+  .intro .projects {
+    justify-self: end;
+    text-align: right;
+  }
+ 
+  .intro .projects .count {
+    font-size: 13px;
+  }
+ 
+  .intro .projects .count .num { color: var(--red); }
+ 
+  .intro .projects .years {
+    font-size: 13px;
+    margin-top: 4px;
+    color: rgba(28,27,25,0.6);
+  }
+ 
+  .see-work {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+ 
+  .see-work::after {
+    content: "";
+    display: inline-block;
+    width: 34px;
+    height: 1px;
+    background: var(--text);
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+ 
+  /* ---------- skills marquee ---------- */
+  .skills {
+    border-top: 1px solid rgba(28,27,25,0.2);
+    border-bottom: 1px solid rgba(28, 27, 25, 0.2);
+    padding: 16px 40px;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+ 
+  .skills span.dot {
+    color: var(--red);
+  }
+ 
+  @media (max-width: 720px) {
+    .hero-name .first,
+    .hero-name .last {
+      font-size: clamp(48px, 16vw, 96px);
+    }
+    .hero-photo {
+      margin-top: -40px;
+      margin-left: 20%;
+      height: 220px;
+    }
+    .fig-tag {
+      left: 20%;
+    }
+    .intro {
+      grid-template-columns: 1fr;
+    }
+    .intro .projects {
+      justify-self: start;
+      text-align: left;
+    }
+  }
+</style>

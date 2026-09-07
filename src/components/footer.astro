@@ -1,68 +1,232 @@
-<footer>
-    <div>
-        <a href="/" class="logo">Xavannah Baars</a>
-        <p>Fontend Designer</p>
+<footer id="contact">
+
+    <div class="left">
+        <h2>let's<br>talk</h2>
+        <p>Thanks for scrolling this far. I'm always up for
+        learning, growing and new opportunities — if
+        you think we'd work well together, I'd love to hear
+        from you.</p>
+        <a href="mailto:xavannahbaars@icloud.com">xavannahbaars@icloud.com</a>
     </div>
 
-    <div>
-        <h3>Contact info</h3>
-        <p><a href="mailto:xavannahbaars@icloud.com">xavannahbaars@icloud.com</a></p>
-        <p><a href="tel:+31612345678">+31 6 12345678</a></p>
+    <div class="right">
+        <img src="images/erfbelasting.png" alt="Me">
+        <div>OPEN FOR<br>INTERNSHIPS</div>
     </div>
 
-    <div>
-        <h3>Sitemap</h3>
-        <p><a href="/">Home</a></p>
-        <p><a href="/work">work</a></p>
-        <p><a href="/about">About</a></p>
-        <p><a href="/contact">Contact</a></p>
+    <div class="bottom">
+        <span>XAVANNAH BAARS © 2026</span>
+        <a href="#">BACK TO TOP ↑</a>
     </div>
+
 </footer>
 
 <style>
-/* footer Styling*/
 
 footer {
-    border-top: 1px solid var(--text-color-grey);
-    margin: 0px auto 0px;
-    padding: 40px clamp(20px, 4vw, 56px) 36px; /* berekend met font clamp generator */
-    max-width: 1280px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 32px;
-    font-size: 13px;
-    color: var(--text-color-grey);
+    min-height: 100vh;
+    padding: 60px 20px 20px;
+
+    background: var(--red);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
 }
 
-div:nth-of-type(1) a.logo {
-    font-family: Caveat, cursive;
-    font-size: var(--text-logo);
-    color: var(--accent-color);
-    line-height: 1;
-    margin-bottom: 6px;
+
+/* LEFT */
+
+.left h2 {
+    font-family: Arial, sans-serif;
+    font-size: 25vw;
+    line-height: .8;
+    letter-spacing: -8px;
+
+    margin-bottom: 40px;
+}
+
+.left p {
+    max-width: 350px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+.left a {
+    color: var(--white);
+
+    font-family: Arial, sans-serif;
+    font-size: 6vw;
+    font-weight: bold;
+
     text-decoration: none;
-
+    border-bottom: 2px solid var(--white);
 }
 
-div:nth-of-type(2) h3,
-div:nth-of-type(3) h3 {
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
+
+/* RIGHT */
+
+.right {
+    position: relative;
+
+    margin-top: 60px;
 }
 
-div:nth-of-type(2) a,
-div:nth-of-type(3) a {
-    color: var(--accent-color);
+.right img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    border: 8px solid var(--cream);
+
+    filter: grayscale(100%);
+}
+
+.right div {
+    position: absolute;
+
+    right: -5px;
+    bottom: -15px;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: monospace;
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+
+/* BOTTOM */
+
+.bottom {
+    margin-top: 60px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,.4);
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.bottom a {
+    color: var(--white);
     text-decoration: none;
-    border-bottom: 1px dashed rgba(31, 63, 199, 0.333);
-    padding-bottom: 1px;
-    align-self: flex-start;
 }
 
-a:hover{
-    color: var(--text-color);
+
+/* =====================
+   DESKTOP
+===================== */
+
+@media (min-width: 768px) {
+
+    footer {
+        padding: 120px 28px 25px;
+    }
+
+    /* LEFT + RIGHT */
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+    }
+
+
+    /* LEFT */
+
+    .left {
+        align-self: center;
+    }
+
+    .left h2 {
+        font-size: 13vw;
+        letter-spacing: -10px;
+        margin-bottom: 45px;
+    }
+
+    .left p {
+        font-size: 17px;
+        max-width: 430px;
+    }
+
+    .left a {
+        font-size: 3vw;
+    }
+
+
+    /* RIGHT */
+
+    .right {
+        margin: 0;
+        align-self: center;
+    }
+
+    .right img {
+        height: 430px;
+    }
+
+    .right div {
+        width: 105px;
+        height: 105px;
+
+        right: -5px;
+        bottom: -20px;
+    }
+
+
+    /* BOTTOM */
+
+    .bottom {
+        grid-column: 1 / -1;
+
+        margin-top: 20px;
+    }
+}
+
+
+/* =====================
+   LARGE DESKTOP
+===================== */
+
+@media (min-width: 1200px) {
+
+    footer {
+        padding: 120px 28px 30px;
+    }
+
+    .left h2 {
+        font-size: 12vw;
+    }
+
+    .left a {
+        font-size: 42px;
+    }
+
+    .right img {
+        height: 430px;
+    }
 }
 </style>
