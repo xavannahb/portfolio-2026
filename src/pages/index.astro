@@ -1,0 +1,33 @@
+---
+import Header from "../components/header.astro";
+
+import Intro from "../components/introduction.astro";
+import About from "../components/about.astro";
+import Work from "../components/work.astro";
+import Cv from "../components/cv.astro";
+
+import Footer from "../components/footer.astro";
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="generator" content={Astro.generator} />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/svg+xml" href="../images/xavannah-logo.svg">
+</head>
+<body>
+    <Header />
+    <main>
+        <Intro/>
+        <About/>
+        <Work/>
+        <Cv/>
+        <!-- <HomeIntro/>
+        <HomeLeerdoelen/> -->
+    </main>
+    <Footer/>
+</body>
+</html>

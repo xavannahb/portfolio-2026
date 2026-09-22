@@ -1,0 +1,26 @@
+/* @font-face {
+    font-family: 'Caveat';
+    src: url(/fonts/Caveat-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url(/fonts/SpaceGrotesk-VariableFont_wght.ttf) format('truetype');
+} */
+
+:root {
+    --red: #b3261e;
+    --red-dark: #b51f19;
+    --cream: #f4f0e6;
+    --black: #181512;
+    --white: #f8f4eb;
+    --line: rgba(28, 27, 25, 0.2);
+
+}
+
+/* Main styling  */
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: var(--cream);
+}

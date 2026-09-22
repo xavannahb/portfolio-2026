@@ -1,0 +1,232 @@
+<footer id="contact">
+
+    <div class="left">
+        <h2>let's<br>talk</h2>
+        <p>Thanks for scrolling this far. I'm always up for
+        learning, growing and new opportunities — if
+        you think we'd work well together, I'd love to hear
+        from you.</p>
+        <a href="mailto:xavannahbaars@icloud.com">xavannahbaars@icloud.com</a>
+    </div>
+
+    <div class="right">
+        <img src="images/erfbelasting.png" alt="Me">
+        <div>OP ZOEK<br>NAAR STAGE</div>
+    </div>
+
+    <div class="bottom">
+        <span>XAVANNAH BAARS © 2026</span>
+        <a href="#">BACK TO TOP ↑</a>
+    </div>
+
+</footer>
+
+<style>
+
+footer {
+    min-height: 100vh;
+    padding: 60px 20px 20px;
+
+    background: var(--red);
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* LEFT */
+
+.left h2 {
+    font-family: Arial, sans-serif;
+    font-size: 25vw;
+    line-height: .8;
+    letter-spacing: -8px;
+
+    margin-bottom: 40px;
+}
+
+.left p {
+    max-width: 350px;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+.left a {
+    color: var(--white);
+
+    font-family: Arial, sans-serif;
+    font-size: 6vw;
+    font-weight: bold;
+
+    text-decoration: none;
+    border-bottom: 2px solid var(--white);
+}
+
+
+/* RIGHT */
+
+.right {
+    position: relative;
+
+    margin-top: 60px;
+}
+
+.right img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    border: 8px solid var(--cream);
+
+    filter: grayscale(100%);
+}
+
+.right div {
+    position: absolute;
+
+    right: -5px;
+    bottom: -15px;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: monospace;
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+
+/* BOTTOM */
+
+.bottom {
+    margin-top: 60px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,.4);
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.bottom a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+/* =====================
+   DESKTOP
+===================== */
+
+@media (min-width: 768px) {
+
+    footer {
+        padding: 120px 28px 25px;
+    }
+
+    /* LEFT + RIGHT */
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+    }
+
+
+    /* LEFT */
+
+    .left {
+        align-self: center;
+    }
+
+    .left h2 {
+        font-size: 13vw;
+        letter-spacing: -10px;
+        margin-bottom: 45px;
+    }
+
+    .left p {
+        font-size: 17px;
+        max-width: 430px;
+    }
+
+    .left a {
+        font-size: 3vw;
+    }
+
+
+    /* RIGHT */
+
+    .right {
+        margin: 0;
+        align-self: center;
+    }
+
+    .right img {
+        height: 430px;
+    }
+
+    .right div {
+        width: 105px;
+        height: 105px;
+
+        right: -5px;
+        bottom: -20px;
+    }
+
+
+    /* BOTTOM */
+
+    .bottom {
+        grid-column: 1 / -1;
+
+        margin-top: 20px;
+    }
+}
+
+
+/* =====================
+   LARGE DESKTOP
+===================== */
+
+@media (min-width: 1200px) {
+
+    footer {
+        padding: 120px 28px 30px;
+    }
+
+    .left h2 {
+        font-size: 12vw;
+    }
+
+    .left a {
+        font-size: 42px;
+    }
+
+    .right img {
+        height: 430px;
+    }
+}
+</style>
